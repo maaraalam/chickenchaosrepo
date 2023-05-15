@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 
     }
 
+    [Serialize] float moveSpeed = 7f;
     // Update is called once per frame
     private void Update()
     {
@@ -38,8 +39,9 @@ public class Player : MonoBehaviour
         inputVector = inputVector.normalized;
 
         Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
-        transform.position += (Vector3)inputVector;
+        transform.position += moveDir*Time.deltaTime*moveSpeed;
         Debug.Log(inputVector);
+        Debug.Log(Time.deltaTime);
 
 
     }
