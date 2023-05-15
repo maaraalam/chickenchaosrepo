@@ -16,22 +16,22 @@ public class Player : MonoBehaviour
     private void Update()
     {
         Vector2 inputVector = new Vector2(0, 0);
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             inputVector.y = +1;
         }
 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             inputVector.y = -1;
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             inputVector.x = +1;
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             inputVector.x = -1;
         }
@@ -40,8 +40,10 @@ public class Player : MonoBehaviour
 
         Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
         transform.position += moveDir*Time.deltaTime*moveSpeed;
-        Debug.Log(inputVector);
-        Debug.Log(Time.deltaTime);
+        float rotateSpeed = 10f;
+        transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime*rotateSpeed);
+        //Debug.Log(inputVector);
+        // Debug.Log(Time.deltaTime);
 
 
     }
