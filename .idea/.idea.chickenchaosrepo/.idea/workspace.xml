@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9349946a-9a02-46f3-894b-ecb776a741ba" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.chickenchaosrepo/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.chickenchaosrepo/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.chickenchaosrepo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.chickenchaosrepo/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Assets/Animations/Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Assets/Animations/Idle.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Assets/PrefabsVisuals/PlayerVisual.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Assets/PrefabsVisuals/PlayerVisual.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +21,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerAnimator.cs" />
       </list>
     </option>
   </component>
@@ -65,7 +68,13 @@
       <workItem from="1684137674841" duration="1071000" />
       <workItem from="1684140794843" duration="105000" />
       <workItem from="1684147568144" duration="330000" />
-      <workItem from="1684156634591" duration="1826000" />
+      <workItem from="1684156634591" duration="9256000" />
+      <workItem from="1684310384626" duration="5699000" />
+      <workItem from="1684572057888" duration="3550000" />
+      <workItem from="1684587574112" duration="647000" />
+      <workItem from="1684590729997" duration="1561000" />
+      <workItem from="1684598059004" duration="4070000" />
+      <workItem from="1684658940728" duration="1607000" />
     </task>
     <servers />
   </component>
