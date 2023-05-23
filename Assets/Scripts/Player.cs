@@ -11,8 +11,8 @@ public class Player : MonoBehaviour
     private bool isWalking;
     private void Update()
     {
-
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
+          
         
         Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
 
@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
         isWalking = moveDir != Vector3.zero;
         float rotateSpeed = 2f;
         transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
-        //Debug.Log(inputVector);
+        Debug.Log(inputVector);
         //Debug.Log(Time.deltaTime);
         //Debug.Log(isWalking);
 

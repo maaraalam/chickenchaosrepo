@@ -26,6 +26,7 @@
             <e p="Icons" t="Include" />
           </e>
         </e>
+        <e p="PlayerInputActions.cs" t="Include" />
         <e p="Scenes" t="Include">
           <e p="GameScene" t="Include" />
         </e>
