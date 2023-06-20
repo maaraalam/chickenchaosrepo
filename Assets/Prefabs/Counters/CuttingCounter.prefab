@@ -180,8 +180,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7436c9ac25a95e645803a2bfa465edb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cutKitchenObjectSO: {fileID: 11400000, guid: 69344bfffa9c11a43b42c43fc2a81968, type: 2}
   counterTopPoint: {fileID: 2425803454187966850}
+  cuttingRecipeSOArray:
+  - {fileID: 11400000, guid: a228d089e1ad48c4cb4ee57ae50b827c, type: 2}
+  - {fileID: 11400000, guid: 7b5cfc5e86b8b94489173c97a9d09042, type: 2}
+  - {fileID: 11400000, guid: 0e3eb68da124b00419d5bb9f3ebde7f7, type: 2}
 --- !u!4 &8115561320511114180 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2818024234390597730, guid: 9e33dc595dbc8f64a9dcda831a555da0,
