@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &594072163404257364
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1324422546592430377, guid: 4f16ba8bd7d012e4a9fe7f88b9b09c6c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: aa1bacc24dde76e47b2ec0dd4e82385b,
+        type: 3}
+    - target: {fileID: 1901465425769827416, guid: 4f16ba8bd7d012e4a9fe7f88b9b09c6c,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901465425769827416, guid: 4f16ba8bd7d012e4a9fe7f88b9b09c6c,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901465425769827416, guid: 4f16ba8bd7d012e4a9fe7f88b9b09c6c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: aa1bacc24dde76e47b2ec0dd4e82385b,
+        type: 3}
+    - target: {fileID: 1901465425769827416, guid: 4f16ba8bd7d012e4a9fe7f88b9b09c6c,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6709986651677002941, guid: 4f16ba8bd7d012e4a9fe7f88b9b09c6c,
+        type: 3}
+      propertyPath: m_Name
+      value: ContainerCounter_MeatPattyUnCooked
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420064791011854335, guid: 4f16ba8bd7d012e4a9fe7f88b9b09c6c,
+        type: 3}
+      propertyPath: kitchenObjectSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 529cd55e45e24d24dab4cffb53b16ca0,
+        type: 2}
+    - target: {fileID: 8940320192265543928, guid: 4f16ba8bd7d012e4a9fe7f88b9b09c6c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940320192265543928, guid: 4f16ba8bd7d012e4a9fe7f88b9b09c6c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940320192265543928, guid: 4f16ba8bd7d012e4a9fe7f88b9b09c6c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940320192265543928, guid: 4f16ba8bd7d012e4a9fe7f88b9b09c6c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940320192265543928, guid: 4f16ba8bd7d012e4a9fe7f88b9b09c6c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940320192265543928, guid: 4f16ba8bd7d012e4a9fe7f88b9b09c6c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940320192265543928, guid: 4f16ba8bd7d012e4a9fe7f88b9b09c6c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940320192265543928, guid: 4f16ba8bd7d012e4a9fe7f88b9b09c6c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940320192265543928, guid: 4f16ba8bd7d012e4a9fe7f88b9b09c6c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940320192265543928, guid: 4f16ba8bd7d012e4a9fe7f88b9b09c6c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940320192265543928, guid: 4f16ba8bd7d012e4a9fe7f88b9b09c6c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4f16ba8bd7d012e4a9fe7f88b9b09c6c, type: 3}

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class BaseCounter : MonoBehaviour, IKitchenObjectParent
 {
-    // Start is called before the first frame update
+   // [SerializeField] private KitchenObjectSO cutKitchenObjectSO;
+
 
     private KitchenObject kitchenObject;
     [SerializeField] private Transform counterTopPoint;
@@ -13,6 +14,12 @@ public class BaseCounter : MonoBehaviour, IKitchenObjectParent
     {
         Debug.Log("BaseCounter.Inetract();");
     }
+    
+    public virtual void InteractAlternate(Player player)
+    {
+        Debug.Log("BaseCounter.InteractAlternate();");
+    }
+
     public Transform GetKitchenObjectFollowTransform()
     {
         return counterTopPoint;
