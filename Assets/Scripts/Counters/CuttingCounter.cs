@@ -4,12 +4,10 @@ using System.Collections.Generic;
 using System.Runtime.ExceptionServices;
 using UnityEngine;
 
-public class CuttingCounter : BaseCounter
+public class CuttingCounter : BaseCounter,IHasProgress
 {
-    public event EventHandler<OnProgressChangedEventArgs> OnProgressChanged;
-    public class OnProgressChangedEventArgs : EventArgs {
-        public float progressNormalized;
-    }
+    public event EventHandler<IHasProgress.OnProgressChangedEventArgs> OnProgressChanged;
+     
     public event EventHandler OnCut;
 
 
@@ -30,7 +28,7 @@ public class CuttingCounter : BaseCounter
                     cuttingProgresss = 0;
                     CuttingRecipeSO cuttingRecipeSO = GetCuttingRecipeSOWithInput(GetKitchenObject().GetKitchenObjectSO());
 
-                    OnProgressChanged?.Invoke(this, new OnProgressChangedEventArgs { 
+                    OnProgressChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs { 
                         progressNormalized=(float)cuttingProgresss/cuttingRecipeSO.cuttingProgressMax
                     });
                 }
@@ -43,10 +41,19 @@ public class CuttingCounter : BaseCounter
             }
         }
         else
-        { //there is achiken object here
+        { //there is a chiken object here
             if (player.HasKitchenObject())
             { //player is carrying s.th
+                if (player.GetKitchenObject().TryGetPlate(out PlatekitchenObject plateKitchenObject))
+                {
+                    //player is holding plate
+                    // PlatekitchenObject plateKitchenObject = player.GetKitchenObject() as PlatekitchenObject;
+                    if (plateKitchenObject.TryAddIngredient(GetKitchenObject().GetKitchenObjectSO()))
+                    {
+                        GetKitchenObject().DestroySelf();
 
+                    }
+                }
             }
             else
             {  //player is not carrying anything 
@@ -64,7 +71,7 @@ public class CuttingCounter : BaseCounter
 
             CuttingRecipeSO cuttingRecipeSO = GetCuttingRecipeSOWithInput(GetKitchenObject().GetKitchenObjectSO());
 
-            OnProgressChanged?.Invoke(this, new OnProgressChangedEventArgs
+            OnProgressChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs
             {
                 progressNormalized = (float)cuttingProgresss / cuttingRecipeSO.cuttingProgressMax
             });
