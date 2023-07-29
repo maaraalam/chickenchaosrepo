@@ -179,7 +179,7 @@ public class Player : MonoBehaviour,IKitchenObjectParent
             //OnSelectedCounterChanged?.Invoke(this, new OnSelectedCounterChangedEventArgs{selectedCounter = selectedCounter});
         }
 
-        UnityEngine.Debug.Log (selectedCounter);
+      //  UnityEngine.Debug.Log (selectedCounter);
 
     }
 

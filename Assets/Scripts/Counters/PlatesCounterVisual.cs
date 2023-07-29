@@ -34,6 +34,5 @@ public class PlatesCounterVisual : MonoBehaviour
         float plateOffsetY = .1f;
         platesVisualTransform.localPosition = new Vector3(0, plateOffsetY * platesVisualGameObjectList.Count, 0);
         platesVisualGameObjectList.Add(platesVisualTransform.gameObject);
-       // platesVisualGameObjectList.Add(platesVisualTransform.gameObject);
     }
 }

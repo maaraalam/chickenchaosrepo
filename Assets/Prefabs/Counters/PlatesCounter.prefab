@@ -120,10 +120,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseCounter: {fileID: 2536960912965251805}
-  visualGameObjectArray: []
+  visualGameObjectArray:
+  - {fileID: 4419761275346025110}
 --- !u!4 &4392850110097443145 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4589716710238282923, guid: e21b499d164095947b7559f0267f0e63,
+    type: 3}
+  m_PrefabInstance: {fileID: 236292613564116450}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4419761275346025110 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4472461010448373620, guid: e21b499d164095947b7559f0267f0e63,
     type: 3}
   m_PrefabInstance: {fileID: 236292613564116450}
   m_PrefabAsset: {fileID: 0}

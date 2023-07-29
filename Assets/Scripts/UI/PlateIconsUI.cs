@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlateIconsUI : MonoBehaviour
 {
-    [SerializeField] private PlatekitchenObject platekitchenObject;
+    [SerializeField] private PlatekitchenObject plateKitchenObject;
     [SerializeField] private Transform iconTemplate;
 
     private void Awake()
@@ -13,10 +13,13 @@ public class PlateIconsUI : MonoBehaviour
     }
     private void Start()
     {
-        platekitchenObject.OnIngredientAdded += PlatekitchenObject_OnIngredientAdded;
+        plateKitchenObject.OnIngredientAdded += PlateKitchenObject_OnIngredientAdded;
+       
     }
 
-    private void PlatekitchenObject_OnIngredientAdded(object sender, PlatekitchenObject.OnIngredientAddedEventArgs e)
+    
+
+    private void PlateKitchenObject_OnIngredientAdded(object sender, PlatekitchenObject.OnIngredientAddedEventArgs e)
     {
         UpdateVisual();
     }
@@ -25,11 +28,11 @@ public class PlateIconsUI : MonoBehaviour
             if (child == iconTemplate) continue;
             Destroy(child.gameObject);
         }
-        foreach (KitchenObjectSO kitchenObjectSO in platekitchenObject.GetKitchenObjectSOList())
+        foreach (KitchenObjectSO kitchenObjectSO in plateKitchenObject.GetKitchenObjectSOList())
         {
             Transform  iconTransform=  Instantiate(iconTemplate, transform);
-            iconTemplate.gameObject.SetActive(true);
-            iconTransform.GetComponent<PlateIconSingleUI>().SetKitchenObjectSo (kitchenObjectSO);
+            iconTransform.gameObject.SetActive(true);
+            iconTransform.GetComponent<PlateIconSingleUI>().SetKitchenObjectSO(kitchenObjectSO);
         }
     
     }

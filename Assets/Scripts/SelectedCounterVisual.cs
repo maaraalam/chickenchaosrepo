@@ -30,13 +30,13 @@ public class SelectedCounterVisual : MonoBehaviour
         if (e.selectedCounter == baseCounter)
         {
             Show();
-            Debug.Log("show");
+           // Debug.Log("show");
 
         }
         else
         {
             Hide();
-            Debug.Log("hide");
+           // Debug.Log("hide");
         }
     }
 
