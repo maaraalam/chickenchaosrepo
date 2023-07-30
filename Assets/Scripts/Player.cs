@@ -9,6 +9,8 @@ using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour,IKitchenObjectParent
 {
+    public EventHandler OnPickupSomething;
+
     private KitchenObject kitchenObject;
     [SerializeField] private Transform kitchenObjectHoldOnpoint;
 
@@ -195,6 +197,14 @@ public class Player : MonoBehaviour,IKitchenObjectParent
     public void SetChickenObject(KitchenObject kitchenObject)
     {
         this.kitchenObject = kitchenObject;
+        
+        if (kitchenObject != null)
+        {
+            UnityEngine.Debug.Log("s.th is picked up");
+            OnPickupSomething?.Invoke(this, EventArgs.Empty);
+
+
+        }
     }
     public KitchenObject GetKitchenObject()
     {

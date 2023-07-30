@@ -42,10 +42,10 @@ public class PlatesCounter : BaseCounter
             { //there is at least one plate in here
                 platesSpawnedAmount--;
                 KitchenObject.SpawnKitchenObject(plateKitchenObjectSO, player);
-                if (player.HasKitchenObject())
-                {
-                    Debug.Log("it has");
-                }
+                //if (player.HasKitchenObject())
+                //{
+                //    Debug.Log("it has");
+                //}
                 OnPlateRemoved?. Invoke(this, EventArgs.Empty);
 
             }
