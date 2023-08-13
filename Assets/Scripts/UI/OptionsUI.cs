@@ -42,7 +42,7 @@ public class OptionsUI : MonoBehaviour
         });  
         closeButton.onClick.AddListener(() => {
             Hide(); 
-         });
+        });
         moveUpButton.onClick.AddListener(() => {  RebindBinding(GameInput.binding.Move_Up); });  
         moveDownButton.onClick.AddListener(() => {  RebindBinding(GameInput.binding.Move_Down); });  
         moveRightButton.onClick.AddListener(() => {  RebindBinding(GameInput.binding.Move_Right); });  
@@ -57,7 +57,6 @@ public class OptionsUI : MonoBehaviour
         GameManager.Instance.OnGameUnPaused += GameManager_OnGameUnPaused;
         UpdateVisual();
         HidePressToRebindKey();
-
         Hide();
     }
 
@@ -70,7 +69,6 @@ public class OptionsUI : MonoBehaviour
     {
         soundEffectsText.text = "Sound Effects:" + Mathf.Round(SoundManager.Instance.GetVolume()*10f);
         musicText.text = "Music:" + Mathf.Round(MusicManager.Instance.GetVolume()*10f);
-
         MoveUpTxt.text = GameInput.Instance.GetBindingText(GameInput.binding.Move_Up);
         MoveDownTxt.text = GameInput.Instance.GetBindingText(GameInput.binding.Move_Down);
         MoveRightTxt.text = GameInput.Instance.GetBindingText(GameInput.binding.Move_Right);

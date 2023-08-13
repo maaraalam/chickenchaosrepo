@@ -204,7 +204,7 @@ public class Player : MonoBehaviour,IKitchenObjectParent
         
         if (kitchenObject != null)
         {
-            UnityEngine.Debug.Log("s.th is picked up");
+            //UnityEngine.Debug.Log(kitchenObject.ToString() + "  is picked up ! ");
             OnPickupSomething?.Invoke(this, EventArgs.Empty);
 
 
