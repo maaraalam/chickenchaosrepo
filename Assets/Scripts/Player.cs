@@ -104,7 +104,6 @@ public class Player : MonoBehaviour,IKitchenObjectParent
         float playerHeight = 2f;
         float moveDistance = moveSpeed * Time.deltaTime;
         bool canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadious, moveDir, moveDistance);
-        // bool canMove = !Physics.Raycast(transform.position, moveDir, playerSize);
         if (canMove)
         {
             transform.position += moveDir * moveDistance;
@@ -143,12 +142,12 @@ public class Player : MonoBehaviour,IKitchenObjectParent
 
 
         //transform.forward = moveDir;
-        isWalking = moveDir != Vector3.zero;
+        isWalking = (moveDir != Vector3.zero);
         float rotateSpeed = 2f;
         transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
-        //Debug.Log(inputVector);
-        //Debug.Log(Time.deltaTime);
-        //Debug.Log(isWalking);
+
+ 
+ 
 
 
 
@@ -165,28 +164,22 @@ public class Player : MonoBehaviour,IKitchenObjectParent
         {
            if( raycastHit.transform.TryGetComponent(out BaseCounter baseCounter))
             {  // has clear counter
-                //clearCounter.Interact();
-                if (baseCounter != selectedCounter)
+                 if (baseCounter != selectedCounter)
                 {
                     SetSelectedCounter (baseCounter);
-                  //  OnSelectedCounterChanged?.Invoke(this, new OnSelectedCounterChangedEventArgs{selectedCounter = selectedCounter});
-
+ 
                 }
             }    
             else {
                 SetSelectedCounter( null);
-                //OnSelectedCounterChanged?.Invoke(this, new OnSelectedCounterChangedEventArgs { selectedCounter = selectedCounter });
-            }
-           // ClearCounter clearcounter = raycastHit.transform.Getcomponent<ClearCounter>;
-        }
+             }
+         }
         else
         {
             SetSelectedCounter(null);
-            //OnSelectedCounterChanged?.Invoke(this, new OnSelectedCounterChangedEventArgs{selectedCounter = selectedCounter});
-        }
+         }
 
-      //  UnityEngine.Debug.Log (selectedCounter);
-
+ 
     }
 
     private void SetSelectedCounter(BaseCounter selectedCounter) { 
