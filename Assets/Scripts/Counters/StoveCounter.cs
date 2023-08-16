@@ -37,6 +37,7 @@ public class StoveCounter : BaseCounter,IHasProgress
     {
         state = State.Idle;
     }
+
     private void Update()
     {
         if (HasKitchenObject())
@@ -99,11 +100,12 @@ public class StoveCounter : BaseCounter,IHasProgress
              
         }
     }
-    
+
     private IEnumerator HandleFryTimer()
     { 
         yield return new WaitForSeconds(1f);    
     }
+
     public override void Interact(Player player)
     {
         if (!HasKitchenObject())
@@ -175,11 +177,13 @@ public class StoveCounter : BaseCounter,IHasProgress
             }
         }
     }
+
     private bool HasRecipeWithInput(KitchenObjectSO inputKitchenObjectSO)
     {
         FryingRecipeSO fryingRecipeSO = GetFryingRecipeSOWithInput(inputKitchenObjectSO);
         return fryingRecipeSO != null;
     }
+
     private KitchenObjectSO GetOutputForInput(KitchenObjectSO inputKitchenObjectSO)
     {
         FryingRecipeSO fryingRecipeSO = GetFryingRecipeSOWithInput(inputKitchenObjectSO);
@@ -193,6 +197,7 @@ public class StoveCounter : BaseCounter,IHasProgress
         }
 
     }
+
     private FryingRecipeSO GetFryingRecipeSOWithInput(KitchenObjectSO inputKitchenObjectSO)
     {
         foreach (FryingRecipeSO fryingRecipeSO in fryingRecipesSOArray)
@@ -205,6 +210,7 @@ public class StoveCounter : BaseCounter,IHasProgress
         return null;
 
     }
+
     private BurningRecipeSO GetBurningRecipeSOWithInput(KitchenObjectSO inputKitchenObjectSO)
     {
         foreach (BurningRecipeSO burningRecipeSO in burningRecipesSOArray)
@@ -218,7 +224,6 @@ public class StoveCounter : BaseCounter,IHasProgress
 
     }
 
-   
     public class OnStateChangedEventArgs : EventArgs
     {
         public State state;

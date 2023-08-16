@@ -13,6 +13,11 @@ public class StartCountDownUI : MonoBehaviour
         Hide();
     }
 
+    private void Update()
+    {
+          countdownText.text =Mathf.Ceil( GameManager.Instance.GetCountDownToStartTimer()).ToString();
+    }
+
     private void GameManager_OnStateChanged(object sender, System.EventArgs e)
     {
         if (GameManager.Instance.IsCountDownToStartActive())
@@ -23,11 +28,6 @@ public class StartCountDownUI : MonoBehaviour
         {
             Hide();
         }
-    }
-
-    private void Update()
-    {
-          countdownText.text =Mathf.Ceil( GameManager.Instance.GetCountDownToStartTimer()).ToString();
     }
 
     private void Show()

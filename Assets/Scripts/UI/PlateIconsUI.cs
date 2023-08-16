@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlateIconsUI : MonoBehaviour
 {
     [SerializeField] private PlatekitchenObject plateKitchenObject;
+
     [SerializeField] private Transform iconTemplate;
 
     private void Awake()
