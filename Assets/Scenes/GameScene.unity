@@ -2416,7 +2416,7 @@ GameObject:
   - component: {fileID: 460516751}
   - component: {fileID: 460516752}
   m_Layer: 5
-  m_Name: StartCounDownUI
+  m_Name: StartCountDownUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
