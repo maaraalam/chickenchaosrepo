@@ -8,6 +8,7 @@ public class ProgressBarUI : MonoBehaviour
     [SerializeField] private Image  barImage;
     [SerializeField] private GameObject hasProgressGameObject;
     private IHasProgress hasProgress;
+
     private void Start()
     {
         hasProgress=hasProgressGameObject.GetComponent<IHasProgress>();
@@ -32,6 +33,7 @@ public class ProgressBarUI : MonoBehaviour
         }
 
      }
+
     private void Show() {
         gameObject.SetActive(true);
     } 

@@ -6,6 +6,7 @@ using TMPro;
 public class StartCountDownUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI countdownText;
+
     private void Start()
     {
         GameManager.Instance.OnStateChanged += GameManager_OnStateChanged;
@@ -28,13 +29,16 @@ public class StartCountDownUI : MonoBehaviour
     {
           countdownText.text =Mathf.Ceil( GameManager.Instance.GetCountDownToStartTimer()).ToString();
     }
+
     private void Show()
     {
         gameObject.SetActive(true);
 
     }
+
     private void Hide()
     {
         gameObject.SetActive(false);
     }
+
 }

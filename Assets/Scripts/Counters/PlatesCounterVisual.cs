@@ -5,8 +5,11 @@ using UnityEngine;
 public class PlatesCounterVisual : MonoBehaviour
 {
     [SerializeField] private PlatesCounter platesCounter;
+
     [SerializeField] private Transform counterTopPoint;
+
     [SerializeField] private Transform plateVisualPrefab;
+
     private List<GameObject> platesVisualGameObjectList;
 
     private void Awake()

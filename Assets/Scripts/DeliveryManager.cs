@@ -5,24 +5,28 @@ using UnityEngine;
 
 public class DeliveryManager : MonoBehaviour
 {
-    public event EventHandler OnRecipeSpawned;
-    public event EventHandler OnRecipeCompleted;
-    public event EventHandler OnRecipeSuccess;
-    public event EventHandler OnRecipeFailed;
-    public static DeliveryManager Instance { get;private set; }
     [SerializeField] private RecipesListSO recipeListSO;
-
     private List<RecipeSO> waitingRecipeSOList;
     private float spawnRecipeTimer;
     private float spawnRecipeTimerMax = 4f;
     private int waitingRecipeMax = 4;
     private int successfulRecipesAmount;
 
+
+    public static DeliveryManager Instance { get;private set; }
+
+    public event EventHandler OnRecipeSpawned;
+    public event EventHandler OnRecipeCompleted;
+    public event EventHandler OnRecipeSuccess;
+    public event EventHandler OnRecipeFailed;
+  
+
     private void Awake()
     { 
         Instance = this;
         waitingRecipeSOList = new List<RecipeSO>();
     }
+
     private void Update()
     {
         spawnRecipeTimer -= Time.deltaTime;
@@ -33,7 +37,7 @@ public class DeliveryManager : MonoBehaviour
             if (waitingRecipeSOList.Count < waitingRecipeMax)
             {
                 RecipeSO waitingRecipeSO = recipeListSO.recipeSOList[UnityEngine.Random.Range(0, recipeListSO.recipeSOList.Count)];
-                Debug.Log(waitingRecipeSO.recipeName);
+                //Debug.Log(waitingRecipeSO.recipeName);
                 waitingRecipeSOList.Add(waitingRecipeSO);
 
                 OnRecipeSpawned?.Invoke(this,EventArgs.Empty);  
@@ -41,6 +45,7 @@ public class DeliveryManager : MonoBehaviour
            
         }
     }
+
     public void DeliverRecipe(PlatekitchenObject plateKitchenObject)
     {
         for(int i=0;i<waitingRecipeSOList.Count;i++)

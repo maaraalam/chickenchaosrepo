@@ -7,14 +7,6 @@ using static CuttingCounter;
 
 public class StoveCounter : BaseCounter,IHasProgress
 {
-    public event EventHandler<IHasProgress.OnProgressChangedEventArgs> OnProgressChanged;
-
-    public event EventHandler<OnStateChangedEventArgs> OnStateChanged;
-    public class OnStateChangedEventArgs : EventArgs
-    {
-        public State state;
-    }
-
     public enum State
     {
         Idle,
@@ -22,17 +14,28 @@ public class StoveCounter : BaseCounter,IHasProgress
         Fried,
         Burned,
     }
+
     [SerializeField] private FryingRecipeSO[] fryingRecipesSOArray;
+
     [SerializeField] private BurningRecipeSO[] burningRecipesSOArray;
+
     private State state;
+
     private float fryingTimer;
+
     private float burningTimer;
+
     private FryingRecipeSO fryingRecipeSO;
+
     private BurningRecipeSO burningRecipeSO;
+
+    public event EventHandler<IHasProgress.OnProgressChangedEventArgs> OnProgressChanged;
+
+    public event EventHandler<OnStateChangedEventArgs> OnStateChanged;
+
     private void Start()
     {
         state = State.Idle;
-        //    StartCoroutine(HandleFryTimer());
     }
     private void Update()
     {
@@ -52,7 +55,7 @@ public class StoveCounter : BaseCounter,IHasProgress
                      {     //fried
                          GetKitchenObject().DestroySelf();
                          KitchenObject.SpawnKitchenObject(fryingRecipeSO.output, this);
-                         Debug.Log("Fried");
+                        // Debug.Log("Fried");
                          state = State.Fried;
                          burningTimer = 0f;
                          burningRecipeSO=GetBurningRecipeSOWithInput(GetKitchenObject().GetKitchenObjectSO());
@@ -90,15 +93,13 @@ public class StoveCounter : BaseCounter,IHasProgress
                 case State.Burned:
                      break;
             }
-            Debug.Log(state);
+            //Debug.Log(state);
         
             
              
         }
     }
-
-     
-
+    
     private IEnumerator HandleFryTimer()
     { 
         yield return new WaitForSeconds(1f);    
@@ -204,7 +205,7 @@ public class StoveCounter : BaseCounter,IHasProgress
         return null;
 
     }
-  private BurningRecipeSO GetBurningRecipeSOWithInput(KitchenObjectSO inputKitchenObjectSO)
+    private BurningRecipeSO GetBurningRecipeSOWithInput(KitchenObjectSO inputKitchenObjectSO)
     {
         foreach (BurningRecipeSO burningRecipeSO in burningRecipesSOArray)
         {
@@ -215,5 +216,11 @@ public class StoveCounter : BaseCounter,IHasProgress
         }
         return null;
 
+    }
+
+   
+    public class OnStateChangedEventArgs : EventArgs
+    {
+        public State state;
     }
 }

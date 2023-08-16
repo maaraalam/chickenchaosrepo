@@ -5,23 +5,15 @@ using UnityEngine;
 
 public class SelectedCounterVisual : MonoBehaviour
 {
-    // Start is called before the first frame update
     [SerializeField] private BaseCounter baseCounter;
+
     [SerializeField] private GameObject[] visualGameObjectArray;
 
     private void Start()
     {
-        // Player player = GetComponent<Player>();
-
- 
+        
         Player.Instance.OnSelectedCounterChanged += Player_OnSelectedCounterChanged;
-         
-
-    }
-
-    private void Instance_OnSelectedCounterChanged(object sender, Player.OnSelectedCounterChangedEventArgs e)
-    {
-        throw new NotImplementedException();
+ 
     }
 
     private void Player_OnSelectedCounterChanged(object sender, Player.OnSelectedCounterChangedEventArgs e)
@@ -39,11 +31,6 @@ public class SelectedCounterVisual : MonoBehaviour
            // Debug.Log("hide");
         }
     }
-
-
-
-
-
 
     private void Show()
     {

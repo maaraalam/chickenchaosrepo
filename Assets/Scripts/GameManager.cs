@@ -5,13 +5,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
-    public static GameManager Instance { get; private set; }
-
-    public event EventHandler OnStateChanged;
-    public event EventHandler OnGamePaused;
-    public event EventHandler OnGameUnPaused;
-
+    private float waitingToStartTimer = 1f;
+    private float countDownToStartTimer = 3f;
+    private float gamePlayingTimer;
+    private float gamePlayingTimerMax = 30f;
+    private bool isGamePaused = false;
     private enum State
     {
         WaitingToStart,
@@ -21,24 +19,25 @@ public class GameManager : MonoBehaviour
 
     }
     private State state;
-    private float waitingToStartTimer = 1f;
-    private float countDownToStartTimer = 3f;
-    private float gamePlayingTimer ;
-    private float gamePlayingTimerMax = 30f;
-    private bool isGamePaused = false;
+
+
+    public static GameManager Instance { get; private set; }
+
+    public event EventHandler OnStateChanged;
+    public event EventHandler OnGamePaused;
+    public event EventHandler OnGameUnPaused;
+
+ 
+ 
     private void Awake()
     {
         Instance = this;
         state = State.WaitingToStart;
     }
+
     private void Start()
     {
         GameInput.Instance.OnPauseAction += GameInput_OnPauseAction;
-    }
-
-    private void GameInput_OnPauseAction(object sender, EventArgs e)
-    {
-        TogglePauseGame();
     }
 
     private void Update()
@@ -78,30 +77,37 @@ public class GameManager : MonoBehaviour
             case State.GameOver:
                 break;
         }
-       // Debug.Log(state);
+        // Debug.Log(state);
     }
+
+      
     public bool IsGamePlaying()
     {
         return state == State.GamePlaying;
     }
+
     public bool IsCountDownToStartActive()
     {
         return state == State.CountDownToStart;
 
     }
+
     public float GetCountDownToStartTimer()
     {
         return countDownToStartTimer;
 
     }
+
     public bool IsStateGameOver()
     {
         return state == State.GameOver;
     }
+
     public float GetGamePlayingTimerNormalized()
     {
         return 1-(gamePlayingTimer / gamePlayingTimerMax);
     }
+
     public void TogglePauseGame()
     {
        isGamePaused = !isGamePaused; 
@@ -120,4 +126,10 @@ public class GameManager : MonoBehaviour
        }
 
     }
+
+    private void GameInput_OnPauseAction(object sender, EventArgs e)
+    {
+        TogglePauseGame();
+    }
+
 }

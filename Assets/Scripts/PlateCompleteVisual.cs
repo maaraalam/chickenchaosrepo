@@ -9,18 +9,16 @@ public class PlateCompleteVisual : MonoBehaviour
     [Serializable]
     public struct KitchenObjectSO_GameObject
     {
-
         public KitchenObjectSO kitchenObjectSO;
         public GameObject gameObject;
-
-
-            
+    
     }
+
     [SerializeField] private PlatekitchenObject platekitchenObject;
+
     [SerializeField] private List<KitchenObjectSO_GameObject> kitchenObjectSOGameObjectList;
 
     private void Start()
-
     {
         platekitchenObject.OnIngredientAdded += PlatekitchenObject_OnIngredientAdded;
 
@@ -43,3 +41,5 @@ public class PlateCompleteVisual : MonoBehaviour
     
     }
 } 
+
+ 

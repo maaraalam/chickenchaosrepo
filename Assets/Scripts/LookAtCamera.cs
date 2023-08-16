@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LookAtCamera : MonoBehaviour
 {
+
     private enum Mode
     {
         LookAt,
@@ -11,8 +12,9 @@ public class LookAtCamera : MonoBehaviour
         CameraForward,
         CameraForwardInverted,
     }
+
     [SerializeField] private Mode mode;
-     
+
     private void LateUpdate()
     {
         switch (mode)

@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class ContainerCounter : BaseCounter
 {
+ 
+    [SerializeField] private KitchenObjectSO kitchenObjectSO;
+
     public event EventHandler OnPlayerGrabbedObject;
 
-    [SerializeField] private KitchenObjectSO kitchenObjectSO;
     public override void Interact(Player player)
     {
         if (!player.HasKitchenObject())
@@ -17,10 +19,7 @@ public class ContainerCounter : BaseCounter
             // kitchenObjectTransform.GetComponent<KitchenObject>().SetKitchenObjectParent(player);
 
             OnPlayerGrabbedObject?.Invoke(this, EventArgs.Empty);
-        } else
-        {
-
-        }
+        }  
 
     }
           

@@ -11,18 +11,18 @@ public class PlateIconsUI : MonoBehaviour
     {
         iconTemplate.gameObject.SetActive(false);
     }
+
     private void Start()
     {
         plateKitchenObject.OnIngredientAdded += PlateKitchenObject_OnIngredientAdded;
        
     }
 
-    
-
     private void PlateKitchenObject_OnIngredientAdded(object sender, PlatekitchenObject.OnIngredientAddedEventArgs e)
     {
         UpdateVisual();
     }
+
     private void UpdateVisual() {
         foreach (Transform child in transform) {
             if (child == iconTemplate) continue;

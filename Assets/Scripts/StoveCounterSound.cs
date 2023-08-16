@@ -5,11 +5,14 @@ using UnityEngine;
 public class StoveCounterSound : MonoBehaviour
 {
     [SerializeField] private StoveCounter stoveCounter;
+
     private AudioSource audioSource;
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
     }
+
     private void Start()
     {
         stoveCounter.OnStateChanged += StoveCounter_OnStateChanged;
@@ -27,4 +30,5 @@ public class StoveCounterSound : MonoBehaviour
             audioSource.Pause();
         }
     }
+
 }

@@ -1,26 +1,31 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class BaseCounter : MonoBehaviour, IKitchenObjectParent
 {
-    // [SerializeField] private KitchenObjectSO cutKitchenObjectSO;
-    public static event EventHandler OnAnyObjectPlacedHere;
 
+
+    [SerializeField] private Transform counterTopPoint;
 
     private KitchenObject kitchenObject;
-    [SerializeField] private Transform counterTopPoint;
+
+    public static event EventHandler OnAnyObjectPlacedHere;
 
     public static void ResetStaticData()
     {
         OnAnyObjectPlacedHere = null;
     }
+
     public virtual void Interact(Player player)
     {
         Debug.Log("BaseCounter.Inetract();");
     }
-    
+
     public virtual void InteractAlternate(Player player)
     {
        // Debug.Log("BaseCounter.InteractAlternate();");
@@ -30,6 +35,7 @@ public class BaseCounter : MonoBehaviour, IKitchenObjectParent
     {
         return counterTopPoint;
     }
+
     public void SetChickenObject(KitchenObject kitchenObject)
     {
         this.kitchenObject = kitchenObject;
@@ -38,14 +44,17 @@ public class BaseCounter : MonoBehaviour, IKitchenObjectParent
             OnAnyObjectPlacedHere?.Invoke(this, EventArgs.Empty);
         }
     }
+
     public KitchenObject GetKitchenObject()
     {
         return kitchenObject;
     }
+
     public void ClearKitchenObject()
     {
         kitchenObject = null;
     }
+
     public bool HasKitchenObject()
     {
         return kitchenObject != null;

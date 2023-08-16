@@ -6,15 +6,36 @@ using UnityEngine;
 
 public class CuttingCounter : BaseCounter,IHasProgress
 {
-    public static event EventHandler OnAnyCut;
-    public event EventHandler<IHasProgress.OnProgressChangedEventArgs> OnProgressChanged;
-     
-    public event EventHandler OnCut;
+    //Constant Fields
+    //Static Fields
+    //Fields
+    //Constructors
+    //Properties
+    //Events / Delegates
+    //LifeCycle Methods(Awake, OnEnable, OnDisable, OnDestroy)
+    //Public Methods
+    //Private Methods
+    //Nested types
+    //Within each of these groups order by access:
+
+    //public
+    //internal
+    //protected
+    //private
+
+ 
 
 
 
     [SerializeField] private CuttingRecipeSO[] cuttingRecipeSOArray;
+
     private int cuttingProgresss;
+
+    public static event EventHandler OnAnyCut;
+
+    public event EventHandler<IHasProgress.OnProgressChangedEventArgs> OnProgressChanged;
+
+    public event EventHandler OnCut;
 
     new public static void ResetStaticData()
     {
